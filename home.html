@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Victoria's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font: 'Roboto';
+      font-size: 13px;
+      height: 100%;
+      margin: 0;
+    }
+
+    .navbar {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      top: 0px;
+      background-color: transparent;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .navbar a {
+      font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      float: right;
+      margin-left: 10px;
+      
+    }
+
+    .navbar a:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    .navbar a:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: inline-block;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 50px;
+    }
+
+    @media screen and (max-height: 300px) {
+      ul {
+        margin-top: 40px;
+       
+      }
+    }
+    .move-left{
+      margin-left: 30px;
+    }
+    .navbar li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 0;
+    }
+
+    .bitmoji-img {
+      width: 850px;
+
+    }
+
+    .wrapper {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .typing-demo {
+      width: 22ch;
+      animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      font-family: monospace;
+      font-size: 2em;
+      color: white;
+      margin-top: 150px;
+      margin-left: 50px;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: fixed;
+      top: 200px;
+      right: 200px;
+      background: radial-gradient(circle, #1e90ff, #8a2be2, #ff1493);
+      background-size: 150% 150%;
+      transform: rotate(45deg);
+      z-index: -1;
+      margin-top: 45px;
+    }
+
+
+    body {
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .landing-cloud-1,
+    .landing-cloud-2 {
+      position: absolute;
+      transition: transform 0.5s ease-out;
+    }
+
+    .landing-cloud-1 {
+      z-index: -1;
+      width: 300hw;
+      object-fit: fill;
+      display: inline-block;
+      position: fixed;
+      animation: animateOpacity 5s linear infinite alternate, animateFilter 10s linear infinite alternate;
+    }
+
+    .landing-cloud-2 {
+      z-index: -1;
+      position: fixed;
+      margin-top: 0px;
+      animation: animateOpacity 5s linear infinite alternate, animateFilter 10s linear infinite alternate;
+    }
+
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+      border: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    @keyframes animateFilter {
+      0% {
+        filter: brightness(1) hue-rotate(0deg);
+
+      }
+
+      100% {
+        filter: brightness(1.5) hue-rotate(180deg);
+      }
+    }
+
+    .cloud-color-purple {
+      filter: hue-rotate(260deg) brightness(1.2);
+    }
+
+    .cloud-color-blue {
+      filter: hue-rotate(200deg) brightness(1.2);
+    }
+
+    .cloud-color-pink {
+      filter: hue-rotate(320deg) brightness(1.2);
+    }
+    @keyframes animateOpacity {
+      0% {
+        opacity: 0.8;
+      }
+
+      100% {
+        opacity: 0.4;
+      }
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      font: Roboto;
+      margin-top: 70px;
+      height: 500px;
+      position: relative;
+      z-index: 1;
+      border-radius: 30px;
+      padding: 20px;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    
+    .column2 {
+      float: right;
+      width: 50%;
+      font: Roboto;
+      height: 500px;
+      position: relative;
+      z-index: 1;
+      /* Remove the float property and set display to inline-block */
+      display: inline-block;
+      /* Add the following properties for the floating effect */
+      animation: floatAnimation 5s ease-in-out infinite;
+  }
+    
+
+    .column2 img {
+      height: 500px;
+      width: 900px;
+      margin-top: -40px;
+      margin-left: -90px;
+    }
+
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+        /* Adjust this value to control the floating height */
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .column p {
+      margin-bottom: 100px;
+      color: white;
+      text-align: justify;
+      padding-left: 50px;
+      animation: slideIn 2s ease;
+      /* Apply the slideIn animation with a slower duration */
+    }
+
+    .column a {
+      color: blue;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .column a:hover {
+      color: grey;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .learn-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #8a2be2;
+}
+</style>
+</head>
+
+<body>
+
+  <img id="cloud-1"
+    src="https://uploads-ssl.webflow.com/605d01759b2d0182669e8304/647ab90142d2b2d30662abab_Landing%20color%20cloud%201.2.png"
+    loading="lazy" alt="" class="landing-cloud-1">
+  <img id="cloud-2"
+    src="https://uploads-ssl.webflow.com/605d01759b2d0182669e8304/647abcc4bb3d6fefb9da6929_Landing%20color%20cloud2.png"
+    loading="lazy" alt="" class="landing-cloud-2">
+
+  <div class="navbar" id="navbar">
+    <ul>
+      <img style="margin-right: 550px; margin-top: 25px; height: 50%; width: 100px;" class="white-image" src="logo.jpg"
+        alt="logo">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="quiz2.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="column">
+    <h1 class="typing-demo">Hello, I'm Victoria.</h1><br><br>
+    <p>I am a student studying computer Science (Bachelors) (Honors) at the University of Windsor.<br><br> I love
+      transforming creative ideas into memorable experiences.<br><br> Outside of Computer science, I enjoy music,
+      strength
+      training, snowboarding, and reading books.
+      <br><br>
+      <a href="about.html"class="learn-more-button">Learn more about me &rarr;</a>
+    </p>
+  </div>
+
+  <div class="column2">
+    <div class ="move-left">
+      <div class ="bitmoji-img">
+    <img src="bitemoji.PNG" alt="bitemoji">
+  </div>
+  </div>
+    <div class="circle"></div>
+    <iframe style="border: none; margin-top:-120px; margin-left:100px" src="laptop.html"></iframe>
+  </div>
+
+  <script>
+    document.addEventListener("mousemove", moveClouds);
+
+    function moveClouds(event) {
+      const cloud1 = document.getElementById("cloud-1");
+      const cloud2 = document.getElementById("cloud-2");
+
+      const xOffset = (event.clientX / window.innerWidth) * 300 - 15;
+      const yOffset = (event.clientY / window.innerHeight) * 400 - 15;
+
+      cloud1.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+      cloud2.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    }
+  </script>
+  </body>
+  </html>

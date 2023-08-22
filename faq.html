@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>FAQ Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font: 'Roboto';
+            font-size: 13px;
+            height: 100%;
+            margin: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            top: 0px;
+            background-color: transparent;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2;
+        }
+
+        .navbar a {
+            font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            float: right;
+            margin-left: 10px;
+
+        }
+
+        .navbar a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        .navbar a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: inline-block;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 50px;
+        }
+
+        @media screen and (max-height: 300px) {
+            ul {
+                margin-top: 40px;
+            }
+        }
+
+        .navbar li {
+            display: inline-block;
+            position: relative;
+            padding: 15px 0;
+        }
+
+
+
+        body {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .landing-cloud-1,
+        .landing-cloud-2 {
+            position: absolute;
+            transition: transform 0.5s ease-out;
+        }
+
+        .landing-cloud-1 {
+            z-index: -1;
+            width: 300hw;
+            object-fit: fill;
+            display: inline-block;
+            position: fixed;
+            animation: animateOpacity 5s linear infinite alternate, animateFilter 10s linear infinite alternate;
+        }
+
+        .landing-cloud-2 {
+            z-index: -1;
+            position: fixed;
+            margin-top: 0px;
+            animation: animateOpacity 5s linear infinite alternate, animateFilter 10s linear infinite alternate;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .portfolio-body {
+            object-fit: fill;
+            background-color: #000;
+            font-family: Inter, sans-serif;
+        }
+
+        @keyframes animateFilter {
+            0% {
+                filter: brightness(1) hue-rotate(0deg);
+
+            }
+
+            100% {
+                filter: brightness(1.5) hue-rotate(180deg);
+            }
+        }
+
+        .cloud-color-purple {
+            filter: hue-rotate(260deg) brightness(1.2);
+        }
+
+        .cloud-color-blue {
+            filter: hue-rotate(200deg) brightness(1.2);
+        }
+
+        .cloud-color-pink {
+            filter: hue-rotate(320deg) brightness(1.2);
+        }
+
+
+
+        .question {
+            margin-top: 160px;
+            height: 300px;
+            width: 800px;
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            padding: 10px;
+            overflow: hidden;
+            background-color: rgba(255, 203, 203, 0.113);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-left: 200px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, width 1.5s ease-in-out, margin-left 1.5s ease-in-out, margin-right 1.5s ease-in-out;
+            
+
+        }
+
+
+        .question h1 {
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .question p {
+            font-size: 15px;
+            text-align: left;
+
+        }
+
+        .question img{
+            height: 180px;
+            width:150px;
+        }
+        .question:hover img{
+            margin-left:20px;
+        }
+        
+        .question:hover iframe{
+            margin-left: 30px;
+        }
+
+        .question .column {
+            width: 50%;
+            float: right;
+            margin-top: 60px;
+        }
+
+        .question .column2 {
+            width: 50%;
+            float: left;
+        }
+
+        .question:hover {
+            filter: brightness(1.3);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, width 1.5s ease-in-out, margin-left 1.5s ease-in-out, margin-right 1.5s ease-in-out;
+            margin-left: 150px;
+            margin-right: 50px;
+            width: 900px;
+
+        }
+        .question button{
+         border-radius: 20px;
+         background-color: transparent;
+         color: white;
+        }
+
+        .question button:hover{
+            background-color: grey;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="cloud-1"
+        src="https://uploads-ssl.webflow.com/605d01759b2d0182669e8304/647ab90142d2b2d30662abab_Landing%20color%20cloud%201.2.png"
+        loading="lazy" alt="" class="landing-cloud-1">
+    <img id="cloud-2"
+        src="https://uploads-ssl.webflow.com/605d01759b2d0182669e8304/647abcc4bb3d6fefb9da6929_Landing%20color%20cloud2.png"
+        loading="lazy" alt="" class="landing-cloud-2">
+
+    <div class="navbar" id="navbar">
+        <ul>
+            <img style="margin-right: 550px; margin-top: 25px; height: 50%; width: 100px;" class="white-image"
+                src="logo.jpg" alt="logo">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="quiz2.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1><b>What Are My Skills?</b></h1>
+        <p>I am a front-end and back-end developer who currently can code in languages such as: <button>Java</button>, <button>JavaScript</button>, <button> HTML</button>,
+            <button>CSS</button>, <button>Python</button>, and <button> C++</button>.
+            Besides languages, I am a fast learner, very paitent and love to get things done.
+        </p>
+    </div>
+    <div class="question" style="background-image: url('background.html');";>
+        <h1><b>What Inspired Me?</b></h1>
+        <p>I wrote my first ever line of code in Grade 11. For my final project I cretaed A mental Health Site with an
+            overall goal to bring awareness to Mental Health. My principal stopped by to see what we had come up with.
+            He was astonished by my work and had thought it wasnt my website. My teachers and staff were very
+            supportive and had always wanted to see me succeed despite me being the only female in class. </p>
+    </div>
+
+    <div class="question">
+        <h1><b>What is my goal?</b></h1>
+        <p>Ultimately my goal is to inspire others while also persuing something that I enjoy. I want to prove to other
+            females or the uncommon populaces that they can persue what they like and not be discoruaged. </p>
+    </div>
+    <div class="question" style=" height:350px" ;>
+        <h1><b>On my Free Time</b></h1>
+        <p>During my free time, I enjoy listening to music, working on side projects, watching the fireworks, and going
+            on late night drives.</p>
+        <br>
+        <iframe src="latenightdrive.html"></iframe><iframe src="laptop.html"></iframe><iframe src="fireworks.html"
+            style="width:160px"></iframe>
+    </div>
+    <div class="question">
+        <h1><b>Some Recs</b></h1>
+        <p>Currently I am watching The Recruit, OuterBanks, One Tree Hill, The Summer I Turned Pretty and 13 Reasons Why. </p>
+        <img src="recruit.jpg" alt ="recruit">
+        <img src="outerbanks.png" alt ="OuterBanks">
+        <img src = "onetree.jpg" alt="onetree">
+        <img src="13reasons.jpg" alt="13reasons">
+        <img src="summer.jpg" alt ="summer">
+    </div>
+    <br>
+    <br>
+    <script>
+        document.addEventListener("mousemove", moveClouds);
+
+        function moveClouds(event) {
+            const cloud1 = document.getElementById("cloud-1");
+            const cloud2 = document.getElementById("cloud-2");
+
+            const xOffset = (event.clientX / window.innerWidth) * 300 - 15;
+            const yOffset = (event.clientY / window.innerHeight) * 400 - 15;
+
+            cloud1.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            cloud2.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        }
+    </script>
+    <script>
+        function fadeInOnScroll() {
+            const questions = document.querySelectorAll('.question');
+
+            questions.forEach((question) => {
+                const questionTop = question.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (questionTop < windowHeight) {
+                    question.style.opacity = '1';
+                    question.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Trigger the function on page load in case questions are already in view
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+    <script>
+        const hobbiesSection = document.querySelector('.question');
+     
+     hobbiesSection.addEventListener('mouseover', () => {
+       hobbiesSection.classList.add('hovered');
+     });
+     
+     hobbiesSection.addEventListener('mouseout', () => {
+       hobbiesSection.classList.remove('hovered');
+     });
+     
+     
+       </script>
+</body>
+
+</html>
+</body>
+
+</html>
